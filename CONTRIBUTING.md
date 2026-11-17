@@ -27,7 +27,7 @@
 - Commit message 用约定式：`docs:` / `feat(scripts):` / `fix:` / `ci:` / `chore:`；
 - PR 标题说明改的是哪份文档、哪个条款；正文填 PR 模板中的核对清单；
 - 涉及 `docs/` 的 PR 会自动触发 docx 完整性校验，校验不过不合并；
-- 标准版本号（V3.x）只在维护者确认后升版，升版同步更新 `package.json` 的 `version` 并打 tag。
+- 标准版本号（V3.x）只在维护者确认后升版，升版同步更新 `package.json` 的 `version` 并打 tag；操作细则见 [VERSIONING.md](VERSIONING.md) 升版检查清单。
 
 ## 证据引用口径
 
