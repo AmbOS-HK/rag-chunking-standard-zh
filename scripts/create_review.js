@@ -22,7 +22,7 @@ import {
 } from "docx";
 
 const outputPath = process.argv[2];
-if (!outputPath) throw new Error("Usage: node create_review.js /absolute/path/output.docx");
+if (!outputPath) throw new Error("Usage: node create_review.js <输出文件.docx（绝对或相对路径）>");
 
 const T = String.raw;
 const title = T`《RAG 知识库切片质量标准与验收清单 V3.0》平台冲突核查与文献适用性评审意见（修订版 V2）`;
@@ -316,7 +316,7 @@ const children = [
 
   // 1
   h1("1 评审对象与范围"),
-  p(T`评审对象为《RAG 知识库切片质量标准与验收清单》V3.0（正式评审版，2026-11-17）。该文件为厂商中立的内部技术规范，依据 ITU-T F.748.52（2025）与 GB/Z《人工智能关键技术 检索增强生成系统测评规范》（征求意见稿）制定，全部数值合格线标注为 C 级经验值。`),
+  p(T`评审对象为《RAG 知识库切片质量标准与验收清单》V3.0（正式评审版，2026-11-17）。该文件为厂商中立的内部技术规范，依据 ITU-T F.748.52（2025）与 GB/Z《人工智能关键技术 检索增强生成系统测评规范》（征求意见稿）制定（注：该标准已于 2026-08-27 正式发布为 GB/Z 236—2026《人工智能 检索增强生成系统评价指标与方法》，名称与征求意见稿不同），全部数值合格线标注为 C 级经验值。`),
   para([
     run(T`本次评审回答两个委托问题：（1）该文件与阿里云百炼、百度千帆、华为盘古三个平台的知识库切片标准/默认行为是否存在冲突；（2）文件引用的单篇英文实验论文 arXiv:2601.14123 的结论能否适用于该文件所面向的中文知识库切片质量标准，并补充检索适用于中文场景的权威证据。盘古平台按其两个知识库入口分别核查：CodeArts 盘古助手（研发场景）与盘古大模型 Agent 开发平台`),
     new FootnoteReferenceRun(5),

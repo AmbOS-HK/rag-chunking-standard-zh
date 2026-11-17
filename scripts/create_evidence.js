@@ -18,7 +18,7 @@ import {
 } from "docx";
 
 const outputPath = process.argv[2];
-if (!outputPath) throw new Error("Usage: node create_evidence.js /absolute/path/output.docx");
+if (!outputPath) throw new Error("Usage: node create_evidence.js <输出文件.docx（绝对或相对路径）>");
 
 const T = String.raw;
 const font = { ascii: "Times New Roman", hAnsi: "Times New Roman", cs: "Times New Roman", eastAsia: "SimSun" };
@@ -90,7 +90,7 @@ const table = new Table({
     }),
     new TableRow({
       children: [
-        bcell("HOPE（A New HOPE: Domain-agnostic Automatic Evaluation of Text Chunking；ACM SIGIR 2025，DOI 10.1145/3726302.3729882）", W[0]),
+        bcell("HOPE（A New HOPE: Domain-agnostic Automatic Evaluation of Text Chunking；arXiv:2505.02171；ACM SIGIR 2025，DOI 10.1145/3726302.3729882）", W[0]),
         bcell("通用领域，跨七领域（非中文专属）", W[1]),
         bcell("领域无关 RAG 管线（切片质量自动评估框架）", W[2]),
         bcell("切片质量评估：内在/外在/文档连贯三层特征与 RAG 指标相关性", W[3]),
@@ -117,7 +117,7 @@ const children = [
     run(T`对照基准：arXiv:2601.14123（英文 NQ＋SPLADE 稀疏检索＋Ministral-8B，端到端生成质量）测得 overlap 10–20% 无可测量收益（|ΔBERTScore|≤0.004）。与上表第 1、2 行的差异主要来自检索器类型（稀疏/稠密）、语言与测量层次（端到端/检索层/关键信息层），三者并非平面矛盾。综合表述：overlap 对检索召回与关键信息覆盖可能有收益，对端到端答案质量未必有收益——证据冲突，默认值须自建基线实测。`, { size: 16 }),
     { spacing: { before: 120, after: 60 } },
   ),
-  para(run(T`使用说明：等级口径与标准一致（A＝ITU-T F.748.52；B＝GB/Z 征求意见稿；C＝公开研究/benchmark）——四篇文献按标准分级均属 C 级，载体差异（ACM 收录／会议发表／预印本）已在各行注明；C 级数值不可直接搬用，最终以目标平台自建基线的 A/B 复验为准。网传“信通院 25 能力项＋量化阈值”版本源头不可核验，不在本表收录。`, { size: 16, color: palette.light })),
+  para(run(T`使用说明：等级口径与标准一致（A＝ITU-T F.748.52；B＝GB/Z 236—2026；C＝公开研究/benchmark）——四篇文献按标准分级均属 C 级，载体差异（ACM 收录／会议发表／预印本）已在各行注明；C 级数值不可直接搬用，最终以目标平台自建基线的 A/B 复验为准。网传“信通院 25 能力项＋量化阈值”版本源头不可核验，不在本表收录。`, { size: 16, color: palette.light })),
 ];
 
 const doc = new Document({

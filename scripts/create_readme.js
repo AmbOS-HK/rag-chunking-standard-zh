@@ -19,7 +19,7 @@ import {
 } from "docx";
 
 const outputPath = process.argv[2];
-if (!outputPath) throw new Error("Usage: node create_readme.js /absolute/path/output.docx");
+if (!outputPath) throw new Error("Usage: node create_readme.js <输出文件.docx（绝对或相对路径）>");
 
 const T = String.raw;
 const palette = { dark: "263238", primary: "37474F", light: "78909C", fill: "EEF3F6" };
@@ -90,8 +90,8 @@ const children = [
   fileTable,
 
   h2("二、版本与依据关系"),
-  bullet(T`评审对象为 V3.0；V3.1 为修订草案（未生效），修订依据为评审意见（修订版 V2），R1–R9 与评审意见第 6 章一一对应；`),
-  bullet(T`上位依据：ITU-T F.748.52（A 级）、GB/Z《人工智能关键技术 检索增强生成系统测评规范》征求意见稿（B 级）；文献证据全部为 C 级公开研究；`),
+  bullet(T`评审对象为 V3.0；V3.1 为修订草案（未生效），修订依据为评审意见（修订版 V2），R1–R9 与评审意见第 6 章一一对应，R10 为评审后勘误（GB/Z 236—2026 发布，引用更新）；`),
+  bullet(T`上位依据：ITU-T F.748.52（A 级）、GB/Z 236—2026《人工智能 检索增强生成系统评价指标与方法》（B 级，2026-08-27 发布）；文献证据全部为 C 级公开研究；`),
   bullet(T`勘误立场（V2.1 起维持）：网传“信通院 25 能力项＋量化阈值”版本源头不可核验，不采纳其外部标准出处主张。`),
   bullet(T`版本纪律：版本对应矩阵、升版检查清单与命名/归档规则见仓库根目录 VERSIONING.md；本文件由 scripts/create_readme.js 生成，与仓库 README.md 保持对齐——改动任一边须同步另一边后重新生成。`),
 
