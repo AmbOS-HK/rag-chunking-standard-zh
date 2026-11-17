@@ -12,6 +12,7 @@
 - 新增 `VERSIONING.md`：三层版本载体、版本对应矩阵、升版检查清单、命名与归档规则
 - 新增 `.gitattributes`（统一 LF、docx 标记为 binary）
 - V3.0 评审底本归档：`docs/archive/RAG切片质量标准与验收清单_V3.0_正式评审版.pdf`（修订对照底本入库，落实 VERSIONING §5）
+- 措辞更正（第三方完整性复核发现）：评审意见第 6 章共 7 条建议，仅 6 条落入 R 编号（映射 1→R1、2→R6、3→R4、4→R3、5→R5、6→R2），第 7 条为评审记录待办；R7–R9 为一致性同步与新增——"一一对应"表述更正为准确映射；VERSIONING §2 里程碑行措辞更正为"tag 锁定发布点，未发布变更累积在 main"
 - `tools/validate_docx.py`：支持 glob 通配符（修复 Windows 下 `npm run validate` 失败）、排除 Word/WPS `~$` 锁文件、校验不再短路、空校验显式失败、空 glob 报错文案修正
 - `package.json`：补 `license: CC-BY-4.0` 与 `engines.node >=22`（与锁定依赖对齐），README 环境说明同步更正；生成脚本 usage 文案更正（相对路径可用）
 
