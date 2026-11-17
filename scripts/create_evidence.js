@@ -108,7 +108,7 @@ const children = [
     alignment: AlignmentType.CENTER,
     spacing: { before: 120, after: 60 },
   }),
-  para(run(T`2026-11-17 · 配套《RAG 切片标准平台冲突核查与文献适用性评审意见（修订版 V2）》与《V3.1 修订草案》使用`, { size: 16, color: palette.primary }), {
+  para(run(T`2026-11-17 · 配套《RAG 切片标准平台冲突核查与文献适用性评审意见（修订版 V2）》与《V3.2 修订草案》使用`, { size: 16, color: palette.primary }), {
     alignment: AlignmentType.CENTER,
     spacing: { after: 140 },
   }),
