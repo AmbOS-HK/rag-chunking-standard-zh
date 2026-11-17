@@ -1,0 +1,19 @@
+name: validate-docx
+
+on:
+  push:
+    paths: ["docs/**"]
+  pull_request:
+    paths: ["docs/**"]
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate docx integrity
+        shell: pwsh
+        run: python tools/validate_docx.py (Get-ChildItem docs -Filter *.docx).FullName
