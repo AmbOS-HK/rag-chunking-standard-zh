@@ -7,6 +7,7 @@
 退出码: 0 = 全部通过; 1 = 任一文件失败。
 """
 import glob
+import os
 import sys
 import zipfile
 import xml.etree.ElementTree as ET
@@ -50,5 +51,10 @@ if __name__ == "__main__":
     for arg in sys.argv[1:]:
         expanded = sorted(glob.glob(arg))
         paths.extend(expanded if expanded else [arg])
+    # 排除 Word/WPS 打开文档时产生的 ~$ 锁文件，避免误报 FAIL
+    paths = [p for p in paths if not os.path.basename(p).startswith("~$")]
+    if not paths:
+        print("FAIL 无可校验文件（参数为空或仅匹配到 ~$ 锁文件）")
+        sys.exit(1)
     results = [validate(p) for p in paths]
     sys.exit(0 if all(results) else 1)
