@@ -54,12 +54,12 @@ const fileTable = new Table({
     new TableRow({ children: [hcell("顺序", W[0]), hcell("文件", W[1]), hcell("用途与关键内容", W[2])] }),
     new TableRow({ children: [
       bcell("1", W[0]),
-      bcell("RAG切片标准平台冲突核查与文献适用性评审意见_2026-11-17_修订版.docx", W[1]),
+      bcell("RAG切片标准平台冲突核查与文献适用性评审意见_V2_修订版_2026-11-17.docx", W[1]),
       bcell("先读。评审结论：三平台（四入口）无硬冲突，F-1~F-6 差异点清单；arXiv:2601.14123 结论分层（定性可借鉴、数值不可套用）；中文证据链（CRUD-RAG／Legal-DC／HOPE）；修改建议与局限性声明（含 V2 更正记录）", W[2]),
     ] }),
     new TableRow({ children: [
       bcell("2", W[0]),
-      bcell("RAG切片质量标准与验收清单_V3.1_修订草案.docx", W[1]),
+      bcell("RAG切片质量标准与验收清单_V3.1_修订草案_2026-11-17.docx", W[1]),
       bcell("主文档。标准本体＋验收清单；棕褐色为新增/修订（R1–R9 修订对照）；含中文定位声明（范围段）与附录 A 中文数值基线候选清单（B1–B7，全部【待验证】）", W[2]),
     ] }),
     new TableRow({ children: [
