@@ -48,8 +48,13 @@ if __name__ == "__main__":
         print(__doc__)
         sys.exit(1)
     paths = []
+    ok_all = True
     for arg in sys.argv[1:]:
         expanded = sorted(glob.glob(arg))
+        if not expanded and glob.has_magic(arg):
+            print(f"FAIL {arg}: 通配符无匹配文件")
+            ok_all = False
+            continue
         paths.extend(expanded if expanded else [arg])
     # 排除 Word/WPS 打开文档时产生的 ~$ 锁文件，避免误报 FAIL
     paths = [p for p in paths if not os.path.basename(p).startswith("~$")]
@@ -57,4 +62,4 @@ if __name__ == "__main__":
         print("FAIL 无可校验文件（参数为空或仅匹配到 ~$ 锁文件）")
         sys.exit(1)
     results = [validate(p) for p in paths]
-    sys.exit(0 if all(results) else 1)
+    sys.exit(0 if ok_all and all(results) else 1)

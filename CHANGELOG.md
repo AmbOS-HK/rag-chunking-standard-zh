@@ -5,10 +5,15 @@
 ## [未发布]
 
 ### 变更
+- **上位依据更新**：GB/Z 征求意见稿已于 2026-08-27 正式发布为 GB/Z 236—2026《人工智能 检索增强生成系统评价指标与方法》（国家标准公告 2026 年第 37 号），全部文档引用同步更新；V3.1 修订对照表新增 R10 记录；§8.3 动态更新条款引用由 e) 更正为 f)（依据发布版原文核验）
+- 外部核验补强：arXiv:2601.14123 确认收录于 ECIR 2026（LNCS 16486, pp. 68–73）；arXiv:2604.12047 确认 ICSE-SEIP 2026；Legal-DC 指标数值（Recall 78.02%/75.86%、MRR@5 50.23%/47.56%）经原文核验一致；证据速查表补 HOPE 的 arXiv 编号（2505.02171）
+- CI 升级：触发范围扩展至 `scripts/**`、`tools/**`、`package*.json`；新增 `tools/check_sync.py`「重新生成＋正文比对」步骤，强制单一事实源纪律
 - 交付文档文件名按 VERSIONING.md §4 统一：评审意见补版本号（`_V2_修订版_2026-11-17`）、标准本体补日期（`_V3.1_修订草案_2026-11-17`）；README、`build:all`、Word 版交付包 README 同步更新
 - 新增 `VERSIONING.md`：三层版本载体、版本对应矩阵、升版检查清单、命名与归档规则
-- `tools/validate_docx.py`：支持 glob 通配符（修复 Windows 下 `npm run validate` 失败）、排除 Word/WPS `~$` 锁文件、校验不再短路、空校验显式失败
-- `package.json`：补 `license: CC-BY-4.0` 与 `engines.node >=22`（与锁定依赖对齐），README 环境说明同步更正
+- 新增 `.gitattributes`（统一 LF、docx 标记为 binary）
+- V3.0 评审底本归档：`docs/archive/RAG切片质量标准与验收清单_V3.0_正式评审版.pdf`（修订对照底本入库，落实 VERSIONING §5）
+- `tools/validate_docx.py`：支持 glob 通配符（修复 Windows 下 `npm run validate` 失败）、排除 Word/WPS `~$` 锁文件、校验不再短路、空校验显式失败、空 glob 报错文案修正
+- `package.json`：补 `license: CC-BY-4.0` 与 `engines.node >=22`（与锁定依赖对齐），README 环境说明同步更正；生成脚本 usage 文案更正（相对路径可用）
 
 ## [v3.1.0] - 2026-11-17
 
