@@ -2,8 +2,11 @@
 """DOCX 结构完整性校验：ZIP 完整性、必备部件存在性、XML 良构性。
 
 用法: python tools/validate_docx.py <file.docx> [...]
+参数支持 glob 通配符（如 docs/*.docx），在 Windows cmd/PowerShell 等
+不展开通配符的 shell 下同样可用。
 退出码: 0 = 全部通过; 1 = 任一文件失败。
 """
+import glob
 import sys
 import zipfile
 import xml.etree.ElementTree as ET
@@ -43,4 +46,9 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(__doc__)
         sys.exit(1)
-    sys.exit(0 if all(validate(p) for p in sys.argv[1:]) else 1)
+    paths = []
+    for arg in sys.argv[1:]:
+        expanded = sorted(glob.glob(arg))
+        paths.extend(expanded if expanded else [arg])
+    results = [validate(p) for p in paths]
+    sys.exit(0 if all(results) else 1)
