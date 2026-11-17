@@ -3,7 +3,11 @@
   "version": "3.1.0",
   "private": false,
   "description": "面向中文语料场景的 RAG 知识库切片质量标准与验收清单",
+  "license": "CC-BY-4.0",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build:all": "node scripts/create_review.js \"docs/RAG切片标准平台冲突核查与文献适用性评审意见_2026-11-17_修订版.docx\" && node scripts/create_v31.js \"docs/RAG切片质量标准与验收清单_V3.1_修订草案.docx\" && node scripts/create_evidence.js \"docs/RAG切片证据速查表_2026-11-17.docx\" && node scripts/create_eval_template.js \"docs/RAG自建基线评测集建集模板_V1.0_2026-11-17.docx\" && node scripts/create_readme.js \"docs/README_RAG切片标准评审交付包_2026-11-17.docx\"",
     "validate": "python tools/validate_docx.py docs/*.docx"

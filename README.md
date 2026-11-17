@@ -34,7 +34,7 @@
 
 ```
 docs/        五份交付文档（Word）
-scripts/     文档生成脚本（docx-js，Node 18+，ESM）
+scripts/     文档生成脚本（docx-js，Node 22+，ESM）
 tools/       校验工具（docx 结构完整性检查）
 .github/     CI：push/PR 时自动校验 docs/ 下全部 docx
 ```
